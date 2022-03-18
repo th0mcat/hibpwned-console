@@ -55,6 +55,7 @@ def all_breaches_single():
         print()
         more = input("Do you want to check another email address? (y/n) ")
 
+# Copy/paste a line-separated list of email addresses        
 def all_breaches_list():
     more = "y"
     while more == "y":
@@ -81,7 +82,7 @@ def pass_check():
             print("This password has not been found in any known data breaches.")
         more = input("Do you want to check another password? (y/n) ")
 
-
+# Dictionary of all possible options
 options = {
     1: all_breaches_single,
     2: all_breaches_list,
@@ -101,7 +102,7 @@ def main():
             print("Invalid option")
         
 
-if not all([HIBP_API_KEY]): # all() returns true if every item in the list is a truthy value (i.e, not 0, None or a negative number), false otherwise
+if not all([HIBP_API_KEY]): 
     print("API key not declared in global environment or in script.  Please declare the API key and try again.")
     exit(0)
 
