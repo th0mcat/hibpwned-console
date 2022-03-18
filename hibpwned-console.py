@@ -15,16 +15,17 @@ import json
 import hashlib
 from getpass import getpass
 from os import environ
+import pyfiglet
 
 # Email to check breaches for
-HITB_EMAIL = envion.get("HITB_EMAIL") or None # Pulls email from environment
+HIBP_EMAIL = environ.get("HIBP_EMAIL") or None # Pulls email from environment
 
 # haveibeenpwned credentials
-HITB_APP = envion.get("HITB_APP") or None # Pulls app_name from environment
-HITB_API_KEY = envion.get("HITB_API_KEY") or None # Pulls API key from environment
+HIBP_APP = environ.get("HIBP_APP") or None # Pulls app_name from environment
+HIBP_API_KEY = environ.get("HIBP_API_KEY") or None # Pulls API key from environment
 
 # Making the API call through hibpwned
-hibpconsole = hibpwned.Pwned(HITB_EMAIL, HITB_APP, HITB_API_KEY)
+hibpconsole = hibpwned.Pwned(HIBP_EMAIL, HIBP_APP, HIBP_API_KEY)
 
 # Search HIBP_EMAIL in all breaches
 def all_breaches():
@@ -59,12 +60,17 @@ options = {
 }
 
 def main():
-    print("\n1) Search all breaches\n2) Check password for exposure\n")
+    HIBP_BANNER = pyfiglet.figlet_format("hibpwned-console", width = 200)
+    print(HIBP_BANNER, "\n1) Search all breaches\n2) Check password for exposure\n")
     choice = int(input("Please choose an option: "))
     try:
         options[choice]()
     except KeyError: 
         print("Invalid option")
+
+if not all([HIBP_EMAIL, HIBP_APP, HIBP_API_KEY]): # all() returns true if every item in the list is a truthy value (i.e, not 0, None or a negative number), false otherwise
+    print("Credentials not declared in global environment or in script.  Please enter the credentials and try again.")
+    exit(0)
 
 if __name__ == '__main__':
     main()
