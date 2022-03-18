@@ -1,4 +1,7 @@
+certifi
+charset-normalizer
 hibpwned
+idna
 pyfiglet
-getpass
-hashlib
+requests
+urllib3
