@@ -6,7 +6,14 @@ A terminal-program for https://github.com/plasticuproject/hibpwned
 
   · Install https://github.com/plasticuproject/hibpwned by following the directions in the repo.  
   · Put `hibpwned-console.py` into the `hibpwned` directory.  
-	· Update `HIBP_EMAIL`, `HIBP_APP`, and `HIBP_API` entries to reflect your correct values.  
+  · Set credentials in global environment.
+  
+    user@host:~$ export HIBP_EMAIL=<email> HIBP_APP=<app_name> HIBP_API_KEY=<api_key>
+
+  · Run the program.  
+
+    user@host:~$ python3 hibpwned-console
+
   
 ## Roadmap
 
