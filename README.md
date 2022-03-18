@@ -24,7 +24,7 @@ A terminal-program for https://github.com/plasticuproject/hibpwned
 
   · Run the program.  
 
-    user@host:~$ python3 hibpwned-console
+    user@host:~$ python3 hibpwned-console.py
   
 ## Roadmap
 
