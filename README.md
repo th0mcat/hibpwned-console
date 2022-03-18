@@ -2,18 +2,17 @@
 
 A terminal-program for https://github.com/plasticuproject/hibpwned
 
-## Installation instructions
+## Installation 
 
   · Install https://github.com/plasticuproject/hibpwned by following the directions in the repo.  
   · Put `hibpwned-console.py` into the `hibpwned` directory.  
-  · Set credentials in global environment.
+  · Set API key in global environment (and, optionally, the `app_name`.)
   
-    user@host:~$ export HIBP_EMAIL=<email> HIBP_APP=<app_name> HIBP_API_KEY=<api_key>
+    user@host:~$ export HIBP_API_KEY=<api_key> [HIBP_APP=<app_name>] 
 
   · Run the program.  
 
     user@host:~$ python3 hibpwned-console
-
   
 ## Roadmap
 
