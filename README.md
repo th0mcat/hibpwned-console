@@ -4,8 +4,20 @@ A terminal-program for https://github.com/plasticuproject/hibpwned
 
 ## Installation 
 
-  · Install https://github.com/plasticuproject/hibpwned by following the directions in the repo.  
-  · Put `hibpwned-console.py` into the `hibpwned` directory.  
+  · Clone the repo.  
+  
+    user@host:~$ git clone https://github.com/th0mcat/hibpwned-console
+    user@host:~$ cd hibpwned-console
+    
+  · (Optional) Create a virtual environment
+  
+    user@host:~$ virtualenv -p /usr/bin/python3 .venv
+    user@host:~$ source .venv/bin/activate
+    
+  · Install the dependencies.
+
+    user@host:~$ pip install -r requirements.txt
+  
   · Set API key in global environment (and, optionally, the `app_name`.)
   
     user@host:~$ export HIBP_API_KEY=<api_key> [HIBP_APP=<app_name>] 
