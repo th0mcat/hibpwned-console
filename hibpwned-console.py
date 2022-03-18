@@ -14,13 +14,14 @@ import hibpwned
 import json
 import hashlib
 from getpass import getpass
+from os import environ
 
 # Email to check breaches for
-HITB_EMAIL = #<email>
+HITB_EMAIL = envion.get("HITB_EMAIL") or None # Pulls email from environment
 
 # haveibeenpwned credentials
-HITB_APP = #<app_name>
-HITB_API_KEY = #<api_key>
+HITB_APP = envion.get("HITB_APP") or None # Pulls app_name from environment
+HITB_API_KEY = envion.get("HITB_API_KEY") or None # Pulls API key from environment
 
 # Making the API call through hibpwned
 hibpconsole = hibpwned.Pwned(HITB_EMAIL, HITB_APP, HITB_API_KEY)
@@ -38,7 +39,6 @@ def all_breaches():
     }
     HIBP_TRNK = str.lower(input("Do you want the results to be trunkcated? (y/n) "))
     HIBP_UNVER = str.lower(input("Do you want to search unverified breaches? (output will always be truncated) (y/n) "))
-    print(options_unver[HIBP_UNVER]+options_trnk[HIBP_TRNK])
     try:
         print(json.dumps(hibpconsole.search_all_breaches(options_unver[HIBP_UNVER]+options_trnk[HIBP_TRNK]), indent=4))
     except ValueError: 
