@@ -25,7 +25,7 @@ HIBP_EMAIL = None # Will request email later.
 
 # haveibeenpwned credentials
 HIBP_APP = environ.get("HIBP_APP") or "hibpwned-console" # Pulls app_name from environment or uses 'hibpwned-console'
-HIBP_API_KEY = environ.get("HIBP_API_KEY") or None # Pulls API key from environment.  Feel free to declare it here!
+HIBP_API_KEY = environ.get("HIBP_API_KEY") or None # Pulls API key from environment
 
 # Making the API call through hibpwned
 hibpconsole = hibpwned.Pwned(HIBP_EMAIL, HIBP_APP, HIBP_API_KEY)
@@ -93,7 +93,7 @@ def main():
     choice = 1
     while choice != 4:
         HIBP_BANNER = pyfiglet.figlet_format("hibpwned-console", width = 200)
-        print(HIBP_BANNER, "\n1) Search all breaches for single account\n2) Search all breaches for a list of accounts\n3) Check password for exposure\n4) Quit")
+        print("\n\n\n", HIBP_BANNER, "\n\n\n1) Search all breaches for single account\n2) Search all breaches for a list of accounts\n3) Check password for exposure\n4) Quit\n")
         choice = int(input("Please choose an option: "))
         try:
             options[choice]()
