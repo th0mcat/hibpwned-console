@@ -1,6 +1,6 @@
 # hibpwned-console
 
-A terminal-program for https://github.com/plasticuproject/hibpwned
+A terminal client for https://github.com/plasticuproject/hibpwned
 
 ## Installation 
 
